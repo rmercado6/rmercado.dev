@@ -3,6 +3,7 @@ import TheWelcome from '@/components/TheWelcome.vue'
 import Timeline from '@/components/Timeline.vue'
 import Education from '@/components/Education.vue'
 import Skills from '@/components/Skills.vue'
+import Contact from '@/components/Contact.vue'
 </script>
 
 <template>
@@ -11,5 +12,6 @@ import Skills from '@/components/Skills.vue'
     <Timeline />
     <Education />
     <Skills />
+    <Contact />
   </main>
 </template>
