@@ -63,7 +63,7 @@ h4 {
 
   i {
     top: calc(50% - 25px);
-    left: -26px;
+    left: 0px;
     position: absolute;
     border: 1px solid var(--color-border);
     background: var(--color-background);
@@ -76,7 +76,7 @@ h4 {
     content: ' ';
     border-left: 1px solid var(--color-border);
     position: absolute;
-    left: 0;
+    left: 26px;
     bottom: calc(50% + 25px);
     height: calc(50% - 25px);
   }
@@ -85,7 +85,7 @@ h4 {
     content: ' ';
     border-left: 1px solid var(--color-border);
     position: absolute;
-    left: 0;
+    left: 26px;
     top: calc(50% + 25px);
     height: calc(50% - 25px);
   }
