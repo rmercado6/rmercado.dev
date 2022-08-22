@@ -6,7 +6,15 @@
     <div class="details">
       <h3>
         <slot name="heading"></slot>
+        <span class="ml-2 italic text-sm">
+          (<slot name="time-period"></slot>)
+        </span>
       </h3>
+      <div>
+        <h4>
+          <slot name="job-title"></slot>
+        </h4>
+      </div>
       <slot></slot>
     </div>
   </div>
@@ -36,6 +44,13 @@ i {
 h3 {
   font-size: 1.2rem;
   font-weight: 500;
+  margin-bottom: 0;
+  color: var(--color-heading);
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 350;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
 }
