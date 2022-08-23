@@ -5,7 +5,7 @@ import CitiIcon from './icons/CitiIcon.vue'
 </script>
 
 <template>
-  <div class="flex flex-col justify-center h-screen">
+  <div class="flex flex-col justify-center min-h-screen my-10 md:my-0">
     <h1 class="text-2xl sm:text-3xl font-bold mb-4 md:mb-6">
       Experiencia Laboral
     </h1>

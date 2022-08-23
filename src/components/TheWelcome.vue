@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="h-screen flex flex-col justify-center items-center">
+  <div class="min-h-screen flex flex-col justify-center items-center">
     
     <section class="flex flex-col items-center">
       <!-- content - start -->
@@ -29,7 +29,7 @@
               <path fill="currentColor" d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm8-7.175q.125 0 .262-.038q.138-.037.263-.112L19.6 8.25q.2-.125.3-.312q.1-.188.1-.413q0-.5-.425-.75T18.7 6.8L12 11L5.3 6.8q-.45-.275-.875-.013Q4 7.05 4 7.525q0 .25.1.437q.1.188.3.288l7.075 4.425q.125.075.263.112q.137.038.262.038Z"/>
             </svg>
           </a>
-          <a href="#" target="_blank">
+          <a href="https://www.linkedin.com/in/ricardo-mercado-0607a2249?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BlKc6ihquT9SscmMUonYUZQ%3D%3D" target="_blank">
             <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
             </svg>
