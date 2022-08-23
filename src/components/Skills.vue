@@ -3,14 +3,14 @@ import SkillsItem from "@/components/SkillsItem.vue"
 </script>
 
 <template>
-  <div class="h-screen flex flex-col justify-center items-center">
+  <div class="min-h-screen flex flex-col justify-center items-center">
     
     <div class="w-full">
       <h1 class="text-2xl sm:text-3xl font-bold mb-4 md:mb-6">
         Habilidades
       </h1>
 
-      <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-16">
+      <div class="grid sm:grid-cols-1 xl:grid-cols-3 gap-12 xl:gap-16">
         <SkillsItem>
           <template #icon>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25">

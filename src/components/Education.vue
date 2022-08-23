@@ -2,14 +2,14 @@
 </script>
 
 <template>
-  <div class="h-screen flex flex-col justify-center items-center">
+  <div class="min-h-screen flex flex-col justify-center items-center my-10 md:my-0">
     
     <div class="w-full">
         <h1 class="text-2xl sm:text-3xl font-bold mb-4 md:mb-6">
           Educación
         </h1>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
           <!-- image - start -->
           <a href="https://sireac.rmercado.dev/" class="group h-48 md:h-80 md:col-span-3 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative">
             <img src="/fime.jpeg" loading="lazy" class="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200" />
