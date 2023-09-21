@@ -12,7 +12,7 @@
         </h1>
 
         <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">
-        Ingeniero y músico entusiasta de los datos y del valor que podemos obtener a través de ellos.<br>Apasionado de las ciencias computacionales que busca generar soluciones a las necesidades de los clientes partiendo de la atenta escucha de sus requerimientos.
+          Dedicated web developer with 4+ years of experience who looks out for solutions to clients’ necessities starting from careful listening to their requirements.
         </p>
       </div>
       <!-- content - end -->
@@ -20,7 +20,7 @@
 
       <!-- social - start -->
       <div class="flex justify-center lg:justify-start items-center gap-4">
-        <span class="text-gray-400 text-sm sm:text-base font-semibold tracking-widest uppercase">Contacto</span>
+        <span class="text-gray-400 text-sm sm:text-base font-semibold tracking-widest uppercase">Contact</span>
         <span class="w-12 h-px bg-gray-200"></span>
 
         <div class="flex gap-4">
