@@ -7,7 +7,7 @@ import Contact from '@/components/Contact.vue'
 </script>
 
 <template>
-  <main>
+  <main class="md:px-10">
     <TheWelcome />    
     <Timeline />
     <Education />
