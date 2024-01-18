@@ -11,8 +11,11 @@
           Ricardo Mercado Cavazos
         </h1>
 
-        <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">
-          Dedicated web developer with 4+ years of experience who looks out for solutions to clients’ necessities starting from careful listening to their requirements.
+        <p class="xl:text-lg leading-relaxed mb-8 md:mb-12 text-justify">
+          Dedicated software developer pursuing MSc in Advanced Technologies for Financial Computing at the University of Edinburgh. 
+          Combining 4+ years of professional experience, adept at devising innovative software solutions, tailored to client requirements. 
+          Experienced in understanding client demands, identifying and addressing priorities to deliver cutting-edge improvements. 
+          Passionate musician and orchestral composer.
         </p>
       </div>
       <!-- content - end -->

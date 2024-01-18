@@ -4,6 +4,7 @@ import Timeline from '@/components/Timeline.vue'
 import Education from '@/components/Education.vue'
 import Skills from '@/components/Skills.vue'
 import Contact from '@/components/Contact.vue'
+import Music from '@/components/Music.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import Contact from '@/components/Contact.vue'
     <Timeline />
     <Education />
     <Skills />
+    <Music />
     <Contact />
   </main>
 </template>
