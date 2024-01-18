@@ -13,7 +13,7 @@
         <div class="grid grid-cols-2 gap-5 w-full">
           <span class="text-end">email:</span>
           <span>
-            <a href="mailto:contacto@rmercado.dev">contacto@rmercado.dev</a>
+            <a href="mailto:contact@rmercado.dev">contact@rmercado.dev</a>
           </span>
           <span class="text-end">linked-in:</span>
           <span>
