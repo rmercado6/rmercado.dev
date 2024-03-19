@@ -34,7 +34,7 @@
               />
             </svg>
           </a>
-          <a href="www.linkedin.com/in/ricardo-mercado-cavazos-0607a2249" target="_blank">
+          <a href="https://www.linkedin.com/in/ricardo-mercado-cavazos-0607a2249" target="_blank">
             <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
             >
