@@ -1,10 +1,10 @@
 <script setup>
 import TheWelcome from '@/components/TheWelcome.vue'
-import Timeline from '@/components/Timeline.vue'
-import Education from '@/components/Education.vue'
-import Skills from '@/components/Skills.vue'
+import Timeline from '@/components/TimelineComponent.vue'
+import Education from '@/components/EducationComponent.vue'
+import Skills from '@/components/SkillsComponent.vue'
 import Contact from '@/components/ContactComponent.vue'
-import Music from '@/components/Music.vue'
+import Music from '@/components/MusicComponent.vue'
 </script>
 
 <template>
