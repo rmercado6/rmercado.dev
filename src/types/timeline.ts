@@ -11,6 +11,7 @@ export class TimelineItem {
   description: string
   date: { start: DateDetails; end: DateDetails }
   category: Category
+  img?: string
 
   constructor(
     title: string,
@@ -19,12 +20,14 @@ export class TimelineItem {
       start: DateDetails
       end: DateDetails
     },
-    category: Category
+    category: Category,
+    img?: string
   ) {
     this.title = title
     this.description = description
     this.date = date
     this.category = category
+    this.img = img
   }
 
   getDateString() {
