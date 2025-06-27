@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { timelineItems, TimelineItem } from '@/types/timeline'
 
 const selectedCategory = ref('all')
+const expandedItem = ref(null)
 
 const filteredTimelineItems = computed(() => {
   if (selectedCategory.value === 'all') {
@@ -43,6 +44,7 @@ const categories = [
     <div class="flex justify-center gap-4 pb-6">
       <template v-for="category in categories" :key="category.key">
         <a
+          class="flex items-center justify-center text-center"
           @click="selectedCategory = category.key"
           @mouseenter="selectedCategory = category.key"
           :class="{
@@ -54,7 +56,7 @@ const categories = [
         </a>
       </template>
     </div>
-    <div class="flex flex-col items-center timeline">
+    <div class="flex flex-col items-center timeline w-screen px-6">
       <span
         class="flex rounded-full p-2 w-fit aspect-square justify-center items-center text-xs"
       >
@@ -62,21 +64,28 @@ const categories = [
       </span>
       <template v-for="year in getYears()">
         <template
-          v-for="item in getFilteredTimelineItemsByYear(year)"
-          :key="item.title"
+          v-for="(item, index) in getFilteredTimelineItemsByYear(year)"
+          :key="`${year}-${index}`"
         >
           <div
-            class="flex p-2 border dark:border-gray-200 border-gray-400 timelineItem gap-3"
+            class="flex p-2 border dark:border-gray-200 border-gray-400 timelineItem gap-3 max-w-full cursor-pointer select-none hover:border-emerald-500"
+            @click="
+              expandedItem =
+                expandedItem === `${year}-${index}` ? null : `${year}-${index}`
+            "
           >
-            <div
-              v-if="item.img"
-              class="aspect-square max-h-full border dark:border-gray-200/30 border-gray-400"
-            >
-              <img :src="item.img" class="max-h-full h-12" alt="event image" />
+            <div v-if="item.img" class="aspect-square shrink-0">
+              <img
+                :src="item.img"
+                class="h-12 border dark:border-gray-200/30 border-gray-400"
+                alt="event image"
+              />
             </div>
-            <div class="flex flex-col">
-              <span>{{ item.title }}</span>
-              <span class="hidden">{{ item.description }}</span>
+            <div class="flex flex-col shrink">
+              <span class="text-wrap">{{ item.title }}</span>
+              <span :class="{ 'hidden': expandedItem !== `${year}-${index}` }">
+                {{ item.description }}
+              </span>
               <span>{{ item.getDateString() }}</span>
             </div>
           </div>
