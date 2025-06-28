@@ -1,4 +1,4 @@
-<script setup></script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="h-screen flex flex-col justify-center items-center">
@@ -10,7 +10,8 @@
           </h2>
         </div>
         <div class="w-full flex justify-center">
-          <iframe class="w-full aspect-video"
+          <iframe
+            class="w-full aspect-video"
             src="https://www.youtube.com/embed/videoseries?si=MNypf3szBOpE5mEX&amp;list=PLbrnaQABw0sBNDWW8cMZ-ZCkZNc7SOeul"
             title="YouTube video player"
             frameborder="0"

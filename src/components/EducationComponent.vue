@@ -1,4 +1,4 @@
-<script setup></script>
+<script setup lang="ts"></script>
 
 <template>
   <div
@@ -12,17 +12,24 @@
         <a
           class="group h-48 md:h-80 md:col-span-6 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
         >
-          <img src="/UoE.jpeg" loading="lazy"
+          <img
+            src="/UoE.jpeg"
+            loading="lazy"
             class="w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200"
             alt=""
           />
 
           <div
-            class="bg-gradient-to-t from-gray-800 via-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"></div>
+            class="bg-gradient-to-t from-gray-800 via-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"
+          ></div>
 
-          <div class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3">
+          <div
+            class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3"
+          >
             <div>
-              <span class="font-bold">MSc. Advanced Technologies for Financial Computing</span>
+              <span class="font-bold"
+                >MSc. Advanced Technologies for Financial Computing</span
+              >
               <span class="italic ml-3 text-sm">(Sept. 2023 – Sept. 2024)</span>
             </div>
             <span>University of Edinburgh; School of Informatics.</span>
@@ -44,14 +51,22 @@
           />
 
           <div
-            class="bg-gradient-to-t from-gray-800 via-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"></div>
+            class="bg-gradient-to-t from-gray-800 via-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"
+          ></div>
 
-          <div class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3">
+          <div
+            class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3"
+          >
             <div>
-              <span class="font-bold">Bachelor in Software Technologies Engineering</span>
+              <span class="font-bold"
+                >Bachelor in Software Technologies Engineering</span
+              >
               <span class="italic ml-3 text-sm">(Aug. 2015 – May 2020)</span>
             </div>
-            <span>Universidad Autónoma de Nuevo León; Facultad de ingeniería Mecánica y Eléctrica.</span>
+            <span
+              >Universidad Autónoma de Nuevo León; Facultad de ingeniería
+              Mecánica y Eléctrica.</span
+            >
             <span class="group-hover:underline"
               >Thesis: Chord recommender system based on a desired sentiment
               expression</span
@@ -72,9 +87,12 @@
           />
 
           <div
-            class="bg-gradient-to-t from-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"></div>
+            class="bg-gradient-to-t from-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"
+          ></div>
 
-          <div class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3">
+          <div
+            class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3"
+          >
             <div>
               <span class="font-bold"
                 >International Baccaulereate Diploma Programme</span
@@ -91,17 +109,25 @@
           href="https://kaggle.com"
           class="group h-48 md:h-80 md:col-span-3 flex items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
         >
-          <img src="/kaggle.png" loading="lazy"
+          <img
+            src="/kaggle.png"
+            loading="lazy"
             class="w-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200"
             alt=""
           />
 
           <div
-            class="bg-gradient-to-t from-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"></div>
+            class="bg-gradient-to-t from-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"
+          ></div>
 
-          <div class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3">
+          <div
+            class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3"
+          >
             <div>
-              <span class="font-bold">Machine Learning self-learning through specialized course.</span>
+              <span class="font-bold"
+                >Machine Learning self-learning through specialized
+                course.</span
+              >
               <span class="italic ml-3 text-sm">(2022)</span>
             </div>
             <span>kaggle.com</span>
@@ -122,11 +148,17 @@
           />
 
           <div
-            class="bg-gradient-to-t from-gray-800 via-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"></div>
+            class="bg-gradient-to-t from-gray-800 via-gray-800 to-transparent opacity-70 absolute inset-0 pointer-events-none"
+          ></div>
 
-          <div class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3">
+          <div
+            class="flex flex-col text-white text-sm md:text-lg relative mx-4 md:mx-5 mb-3"
+          >
             <div>
-              <span class="font-bold">Docker y Kubernetes self-learning through specialized courses.</span>
+              <span class="font-bold"
+                >Docker y Kubernetes self-learning through specialized
+                courses.</span
+              >
               <span class="italic ml-3 text-sm">(2021)</span>
             </div>
             <span>TechWorld with Nana</span>
