@@ -68,26 +68,59 @@ const categories = [
           :key="`${year}-${index}`"
         >
           <div
-            class="flex p-2 border dark:border-gray-200 border-gray-400 timelineItem gap-3 max-w-full cursor-pointer select-none hover:border-emerald-500"
-            @click="
-              expandedItem =
-                expandedItem === `${year}-${index}` ? null : `${year}-${index}`
+            class="flex p-2 border timelineItem gap-3 max-w-full select-none"
+            :class="
+              expandedItem === `${year}-${index}`
+                ? 'border-emerald-700/50 bg-gray-700/10'
+                : 'dark:border-gray-200 border-gray-400 hover:border-emerald-500/70 cursor-pointer'
             "
           >
-            <div v-if="item.img" class="aspect-square shrink-0">
+            <div v-if="item.img" class="shrink-0">
               <img
-                :src="item.img"
-                class="h-12 border dark:border-gray-200/30 border-gray-400"
-                alt="event image"
+                class="h-12 border dark:border-gray-200/30 border-gray-400 aspect-square object-cover"
+                :src="item.img.src"
+                :class="item.img.class"
+                :alt="item.img.desc"
               />
             </div>
-            <div class="flex flex-col shrink">
-              <span class="text-wrap">{{ item.title }}</span>
-              <span :class="{ 'hidden': expandedItem !== `${year}-${index}` }">
-                {{ item.description }}
-              </span>
-              <span>{{ item.getDateString() }}</span>
-            </div>
+            <template v-if="expandedItem !== `${year}-${index}`">
+              <div
+                class="flex flex-col text-wrap items-start text-left shrink"
+                @click="expandedItem = `${year}-${index}`"
+              >
+                <span class="font-semibold">{{ item.title }}</span>
+                <span class="text-xs">{{ item.getDateString() }}</span>
+              </div>
+            </template>
+            <template v-if="expandedItem === `${year}-${index}`">
+              <div class="flex flex-col text-wrap items-start text-left shrink">
+                <span class="font-bold">{{ item.title }}</span>
+                <span class="text-xs">{{ item.getDateString() }}</span>
+                <span v-html="item.description" />
+              </div>
+              <div class="shrink-0">
+                <div
+                  @click="expandedItem = null"
+                  class="aspect-square w-5 flex hover:bg-gray-300/20 cursor-pointer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-x-icon lucide-x"
+                  >
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                  </svg>
+                </div>
+              </div>
+            </template>
           </div>
           <span class="timelineItem">{{ year }}</span>
         </template>
