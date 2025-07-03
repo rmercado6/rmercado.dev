@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { timelineItems, TimelineItem } from '@/types/timeline'
 
 const selectedCategory = ref('all')
+const selectedItem = ref<TimelineItem>()
 const expandedItem = ref(null)
 
 const filteredTimelineItems = computed(() => {
@@ -14,18 +15,35 @@ const filteredTimelineItems = computed(() => {
   )
 })
 
+const selectedTimeSpan = computed(() => {
+  if (!selectedItem.value) return { from: null, to: null }
+  return {
+    from: selectedItem.value.date.start.year,
+    to: selectedItem.value.date.end.year
+  }
+})
+
 function getFilteredTimelineItemsByYear(year: number) {
-  return filteredTimelineItems.value.filter(
-    (item: TimelineItem) => item.date.end.year === year
-  )
+  return filteredTimelineItems.value.filter((item: TimelineItem) => {
+    if (item.category === 'studies') return item.date.end.year === year
+    return item.date.start.year === year
+  })
 }
 
 function getYears() {
-  const years = new Set<number>()
+  const eventYears = new Set<number>()
   for (const item of filteredTimelineItems.value) {
-    years.add(item.date.end.year)
+    eventYears.add(item.date.start.year)
   }
-  return Array.from(years).sort((a, b) => b - a)
+  const startYear = Array.from(eventYears).sort((a, b) => a - b)[0]
+  const currentYear = new Date().getFullYear()
+  console.debug(currentYear, startYear)
+  const years = []
+  for (let i = 0; i <= currentYear - startYear; i++) {
+    years.push(currentYear - i)
+  }
+  console.debug(years)
+  return years
 }
 
 const categories = [
@@ -62,18 +80,21 @@ const categories = [
       >
         Today
       </span>
-      <template v-for="year in getYears()">
+      <template v-for="year in getYears()" :key="year">
         <template
           v-for="(item, index) in getFilteredTimelineItemsByYear(year)"
           :key="`${year}-${index}`"
         >
           <div
             class="flex p-2 border timelineItem gap-3 max-w-full select-none"
-            :class="
-              expandedItem === `${year}-${index}`
-                ? 'border-emerald-700/50 bg-gray-700/10'
-                : 'dark:border-gray-200 border-gray-400 hover:border-emerald-500/70 cursor-pointer'
-            "
+            :class="{
+              'selected':
+                selectedTimeSpan.from <= year && selectedTimeSpan.to >= year,
+              'border-emerald-700/50 bg-gray-700/10':
+                expandedItem === `${year}-${index}`,
+              'dark:border-gray-200 border-gray-400 hover:border-emerald-500/70 cursor-pointer':
+                expandedItem !== `${year}-${index}`
+            }"
           >
             <div v-if="item.img" class="shrink-0">
               <img
@@ -83,15 +104,22 @@ const categories = [
                 :alt="item.img.desc"
               />
             </div>
+
             <template v-if="expandedItem !== `${year}-${index}`">
               <div
                 class="flex flex-col text-wrap items-start text-left shrink"
-                @click="expandedItem = `${year}-${index}`"
+                @click="
+                  () => {
+                    expandedItem = `${year}-${index}`
+                    selectedItem = item
+                  }
+                "
               >
                 <span class="font-semibold">{{ item.title }}</span>
                 <span class="text-xs">{{ item.getDateString() }}</span>
               </div>
             </template>
+
             <template v-if="expandedItem === `${year}-${index}`">
               <div class="flex flex-col text-wrap items-start text-left shrink">
                 <span class="font-bold">{{ item.title }}</span>
@@ -100,7 +128,12 @@ const categories = [
               </div>
               <div class="shrink-0">
                 <div
-                  @click="expandedItem = null"
+                  @click="
+                    () => {
+                      expandedItem = null
+                      selectedItem = null
+                    }
+                  "
                   class="aspect-square w-5 flex hover:bg-gray-300/20 cursor-pointer"
                 >
                   <svg
@@ -122,8 +155,17 @@ const categories = [
               </div>
             </template>
           </div>
-          <span class="timelineItem">{{ year }}</span>
         </template>
+
+        <span
+          class="timelineItem"
+          :class="{
+            'text-emerald-500 selected':
+              selectedTimeSpan.from <= year && selectedTimeSpan.to >= year
+          }"
+        >
+          {{ year }}
+        </span>
       </template>
     </div>
   </div>
@@ -147,6 +189,11 @@ div.timelineItem {
   border-left: 1px solid;
   position: absolute;
   @apply dark:border-gray-200 border-gray-400;
+}
+
+.timelineItem:before.selected,
+.timelineItem:after.selected {
+  @apply border-emerald-500;
 }
 
 :after {

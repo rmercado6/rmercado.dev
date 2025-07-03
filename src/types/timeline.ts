@@ -95,13 +95,22 @@ export const timelineItems: TimelineItem[] = [
     },
     'studies',
     {
-      description: 'universidad autónoma de nuevo león logo',
+      description: 'UANL logo',
       src: '/uanl-logo.png'
     }
   ),
   new TimelineItem(
     'Internation Baccaleureate Organization Diploma Progranmme',
-    `Universidad de Monterrey`,
+    `
+    Universidad de Monterrey
+    - 
+    Prepa Udem Unidad San Pedro
+    <br />
+    Extended Essay (Film):
+    <i>Slow cinema in Carlos Reygadas' Films</i>
+    <br />
+    <i>Awarded with excellence</i>
+    `,
     {
       start: { day: 1, month: 8, year: 2013 },
       end: { day: 30, month: 6, year: 2015 }
@@ -113,31 +122,45 @@ export const timelineItems: TimelineItem[] = [
     }
   ),
   new TimelineItem(
-    'Professional Experience',
-    'Professional Experience',
+    'Senior Software Developer',
+    'Accenture Mexico',
     {
-      start: { day: 1, month: 1, year: 2013 },
-      end: { day: 1, month: 1, year: 2015 }
+      start: { day: 31, month: 10, year: 2022 },
+      end: { day: 1, month: 9, year: 2023 }
     },
-    'professional'
+    'professional',
+    {
+      description: 'Accenture Logo',
+      src: '/accenture.png',
+      class: 'bg-white'
+    }
   ),
   new TimelineItem(
-    'Professional Experience',
-    'Professional Experience',
+    'Data Scientist',
+    'Axtel',
     {
-      start: { day: 1, month: 1, year: 2020 },
-      end: { day: 1, month: 1, year: 2024 }
+      start: { day: 6, month: 9, year: 2021 },
+      end: { day: 28, month: 10, year: 2022 }
     },
-    'professional'
+    'professional',
+    {
+      description: 'Axtel Logo',
+      src: '/axtel.png'
+    }
   ),
   new TimelineItem(
-    'Personal Projects',
-    'Personal Projects',
+    'Desarrollador Web Full Stack',
+    'Corporación en Investigación Tecnológica e Informática (CITI)',
     {
-      start: { day: 1, month: 1, year: 2020 },
-      end: { day: 1, month: 1, year: 2024 }
+      start: { day: 1, month: 1, year: 2019 },
+      end: { day: 1, month: 1, year: 2021 }
     },
-    'personal'
+    'professional',
+    {
+      description: 'CITI Logo',
+      src: '/citi.webp',
+      class: 'bg-white'
+    }
   ),
   new TimelineItem(
     'Music',
