@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { timelineItems, TimelineItem } from '@/types/timeline'
+import TimelineItemComponent from '@/components/v2/TimelineItemComponent.vue'
 
 const selectedCategory = ref('all')
-const selectedItem = ref<TimelineItem>()
-const expandedItem = ref(null)
+const selectedItem = ref<TimelineItem | null>(null)
 
 const filteredTimelineItems = computed(() => {
   if (selectedCategory.value === 'all') {
@@ -37,12 +37,10 @@ function getYears() {
   }
   const startYear = Array.from(eventYears).sort((a, b) => a - b)[0]
   const currentYear = new Date().getFullYear()
-  console.debug(currentYear, startYear)
   const years = []
   for (let i = 0; i <= currentYear - startYear; i++) {
     years.push(currentYear - i)
   }
-  console.debug(years)
   return years
 }
 
@@ -76,7 +74,7 @@ const categories = [
     </div>
     <div class="flex flex-col items-center timeline w-screen px-6">
       <span
-        class="flex rounded-full p-2 w-fit aspect-square justify-center items-center text-xs"
+        class="flex rounded-full p-2 w-fit aspect-square justify-center items-center text-xs timelineItem"
       >
         Today
       </span>
@@ -85,85 +83,14 @@ const categories = [
           v-for="(item, index) in getFilteredTimelineItemsByYear(year)"
           :key="`${year}-${index}`"
         >
-          <div
-            class="flex p-2 border timelineItem gap-3 max-w-full select-none"
-            :class="{
-              'selected':
-                selectedTimeSpan.from <= year && selectedTimeSpan.to >= year,
-              'border-emerald-700/50 bg-gray-700/10':
-                expandedItem === `${year}-${index}`,
-              'dark:border-gray-200 border-gray-400 hover:border-emerald-500/70 cursor-pointer':
-                expandedItem !== `${year}-${index}`
-            }"
-          >
-            <div v-if="item.img" class="shrink-0">
-              <img
-                class="h-12 border dark:border-gray-200/30 border-gray-400 aspect-square object-cover"
-                :src="item.img.src"
-                :class="item.img.class"
-                :alt="item.img.desc"
-              />
-            </div>
-
-            <template v-if="expandedItem !== `${year}-${index}`">
-              <div
-                class="flex flex-col text-wrap items-start text-left shrink"
-                @click="
-                  () => {
-                    expandedItem = `${year}-${index}`
-                    selectedItem = item
-                  }
-                "
-              >
-                <span class="font-semibold">{{ item.title }}</span>
-                <span class="text-xs">{{ item.getDateString() }}</span>
-              </div>
-            </template>
-
-            <template v-if="expandedItem === `${year}-${index}`">
-              <div class="flex flex-col text-wrap items-start text-left shrink">
-                <span class="font-bold">{{ item.title }}</span>
-                <span class="text-xs">{{ item.getDateString() }}</span>
-                <span v-html="item.description" />
-              </div>
-              <div class="shrink-0">
-                <div
-                  @click="
-                    () => {
-                      expandedItem = null
-                      selectedItem = null
-                    }
-                  "
-                  class="aspect-square w-5 flex hover:bg-gray-300/20 cursor-pointer"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-x-icon lucide-x"
-                  >
-                    <path d="M18 6 6 18" />
-                    <path d="m6 6 12 12" />
-                  </svg>
-                </div>
-              </div>
-            </template>
-          </div>
+          <timeline-item-component
+            :item
+            :open="selectedItem?.title === item.title"
+            @selected="(e) => (selectedItem = e)"
+          ></timeline-item-component>
         </template>
 
-        <span
-          class="timelineItem"
-          :class="{
-            'text-emerald-500 selected':
-              selectedTimeSpan.from <= year && selectedTimeSpan.to >= year
-          }"
-        >
+        <span class="timelineItem">
           {{ year }}
         </span>
       </template>
@@ -182,16 +109,13 @@ div.timelineItem {
   position: relative;
 }
 
-.timelineItem:before,
 .timelineItem:after {
   content: '';
   height: 20px;
   border-left: 1px solid;
   position: absolute;
-  @apply dark:border-gray-200 border-gray-400;
 }
 
-.timelineItem:before.selected,
 .timelineItem:after.selected {
   @apply border-emerald-500;
 }
@@ -199,15 +123,6 @@ div.timelineItem {
 :after {
   top: 100%;
   left: 50%;
-}
-
-:before {
-  bottom: 100%;
-  left: 50%;
-}
-
-span.timelineItem:first-of-type:before {
-  display: none;
 }
 
 span.timelineItem:last-of-type:after {
