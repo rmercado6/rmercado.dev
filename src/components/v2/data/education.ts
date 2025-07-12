@@ -1,28 +1,27 @@
 import { TimelineItem } from '../../../types/timeline'
 
-export const educationTimelineItems: TimelineItem[] = [
-  new TimelineItem(
-    'Medium Level Technical Career in Music',
-    `
+const items = [
+  {
+    title: 'Medium Level Technical Career in Music',
+    description: `
     Universidad Autónoma de Nuevo León
     -
     Facultad de Música
     <br />
     Coursed as Instrumentalist in Cello
     `,
-    {
-      start: { day: 1, month: 1, year: 2020 },
-      end: { day: 1, month: 1, year: 2022 }
+    date: {
+      start: { day: 6, month: 8, year: 2016 },
+      end: { day: 1, month: 1, year: 2019 }
     },
-    'studies',
-    {
+    img: {
       description: 'UANL logo',
       src: '/uanl-logo.png'
     }
-  ),
-  new TimelineItem(
-    'MSc Advanced Technologies For Financial Computing',
-    `
+  },
+  {
+    title: 'MSc Advanced Technologies For Financial Computing',
+    description: `
     University of Edinburgh
     -
     School of informatics
@@ -30,20 +29,19 @@ export const educationTimelineItems: TimelineItem[] = [
     Dissertation: 
     <i>Automated Financial Document Summarization using GPT</i>
     `,
-    {
+    date: {
       start: { day: 11, month: 9, year: 2023 },
       end: { day: 21, month: 11, year: 2024 }
     },
-    'studies',
-    {
+    img: {
       description: 'university of edinburgh logo',
       src: '/university-of-edinburgh-logo.png',
       class: 'bg-white'
     }
-  ),
-  new TimelineItem(
-    'BSc Software Engineering',
-    `
+  },
+  {
+    title: 'BSc Software Engineering',
+    description: `
     Universidad Autónoma de Nuevo León
     -
     Facultad de Ingeniería Mecánica y Eléctrica
@@ -55,19 +53,18 @@ export const educationTimelineItems: TimelineItem[] = [
       </a>
     </i>
     `,
-    {
+    date: {
       start: { day: 1, month: 8, year: 2015 },
       end: { day: 31, month: 5, year: 2020 }
     },
-    'studies',
-    {
+    img: {
       description: 'UANL logo',
       src: '/uanl-logo.png'
     }
-  ),
-  new TimelineItem(
-    'International Baccalaureate Organization Diploma Programme',
-    `
+  },
+  {
+    title: 'International Baccalaureate Organization Diploma Programme',
+    description: `
     Universidad de Monterrey
     - 
     Prepa Udem Unidad San Pedro
@@ -77,14 +74,17 @@ export const educationTimelineItems: TimelineItem[] = [
     <br />
     <i>Awarded with excellence</i>
     `,
-    {
+    date: {
       start: { day: 1, month: 8, year: 2013 },
       end: { day: 30, month: 6, year: 2015 }
     },
-    'studies',
-    {
+    img: {
       description: 'ibo logo',
       src: '/ib.jpg'
     }
-  )
+  }
+]
+
+export const educationTimelineItems: TimelineItem[] = [
+  ...items.map((item) => ({ ...item, category: 'studies' }))
 ]

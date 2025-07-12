@@ -1,58 +1,59 @@
 import { TimelineItem } from '../../../types/timeline'
 
-export const professionalTimelineItems: TimelineItem[] = [
-  new TimelineItem(
-    'Software Developer Level 2',
-    'Podfather',
-    {
+const items = [
+  {
+    title: 'Software Developer Level 2',
+    description: 'Podfather',
+    date: {
       start: { day: 11, month: 11, year: 2024 },
       end: null
     },
-    'professional',
-    {
+    img: {
       description: 'Podfather Logo',
       src: './podfather_logo.jpeg'
     }
-  ),
-  new TimelineItem(
-    'Senior Software Developer',
-    'Accenture Mexico',
-    {
+  },
+  {
+    title: 'Senior Software Developer',
+    description: 'Accenture Mexico',
+    date: {
       start: { day: 31, month: 10, year: 2022 },
       end: { day: 1, month: 9, year: 2023 }
     },
-    'professional',
-    {
+    img: {
       description: 'Accenture Logo',
       src: '/accenture.png',
       class: 'bg-white'
     }
-  ),
-  new TimelineItem(
-    'Data Scientist',
-    'Axtel',
-    {
+  },
+  {
+    title: 'Data Scientist',
+    description: 'Axtel',
+    date: {
       start: { day: 6, month: 9, year: 2021 },
       end: { day: 28, month: 10, year: 2022 }
     },
-    'professional',
-    {
+    img: {
       description: 'Axtel Logo',
       src: '/axtel.png'
     }
-  ),
-  new TimelineItem(
-    'Desarrollador Web Full Stack',
-    'Corporación en Investigación Tecnológica e Informática (CITI)',
-    {
+  },
+  {
+    title: 'Desarrollador Web Full Stack',
+    description:
+      'Corporación en Investigación Tecnológica e Informática (CITI)',
+    date: {
       start: { day: 1, month: 1, year: 2019 },
       end: { day: 1, month: 1, year: 2021 }
     },
-    'professional',
-    {
+    img: {
       description: 'CITI Logo',
       src: '/citi.webp',
       class: 'bg-white'
     }
-  )
+  }
+]
+
+export const professionalTimelineItems: TimelineItem[] = [
+  ...items.map((x) => ({ ...x, category: 'professional' }))
 ]

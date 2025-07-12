@@ -1,9 +1,10 @@
 import { TimelineItem } from '../../../types/timeline'
 
-export const musicTimelineItems: TimelineItem = [
-  new TimelineItem(
-    '"Somnia - 7. Epitomé" was interpreted by Edinburgh University\'s Composers\' Orchestra',
-    `
+const items: TimelineItem = [
+  {
+    title:
+      '"Somnia - 7. Epitomé" was interpreted by Edinburgh University\'s Composers\' Orchestra',
+    description: `
     <div class="w-full flex justify-center items-center">
       <iframe
         src="https://www.youtube.com/embed/J4nDhtjSfpI?si=kC61qx63R4Uo3pr_&amp;start=2171"
@@ -16,19 +17,19 @@ export const musicTimelineItems: TimelineItem = [
       </iframe>
     </div>
     `,
-    {
+    date: {
       start: null,
       end: { day: 4, month: 4, year: 2024 }
     },
-    'music',
-    {
+    img: {
       description: "Composer's Orchestra Spring concert 2024.",
       src: './compOrchSpring2024.png'
     }
-  ),
-  new TimelineItem(
-    '"Advent of Music 2024 - Days 23 & 24" interpreted by the University of Edinburgh\'s Composers\' Orchestra',
-    `
+  },
+  {
+    title:
+      '"Advent of Music 2024 - Days 23 & 24" interpreted by the University of Edinburgh\'s Composers\' Orchestra',
+    description: `
     <div class="w-full flex justify-center items-center">
       <iframe 
         src="https://www.youtube.com/embed/B_WB5iTuyA0?si=WFPIKP3JNZDQd6Wl&amp;start=46"
@@ -41,19 +42,18 @@ export const musicTimelineItems: TimelineItem = [
       </iframe>
     </div>
     `,
-    {
+    date: {
       start: null,
       end: { day: 3, month: 4, year: 2025 }
     },
-    'music',
-    {
+    img: {
       description: "Composer's Orchestra Spring concert 2025.",
       src: './compOrchSpring2025.png'
     }
-  ),
-  new TimelineItem(
-    'Advent of Music 2024',
-    `
+  },
+  {
+    title: 'Advent of Music 2024',
+    description: `
     <p>
         Inspired by "advent of code" coding I challenge, I designed a composing challenge tofollow during advent 2024
     </p>
@@ -75,32 +75,31 @@ export const musicTimelineItems: TimelineItem = [
       </iframe>
     </div>
     `,
-    {
+    date: {
       start: { day: 1, month: 12, year: 2024 },
       end: { day: 24, month: 12, year: 2024 }
     },
-    'music',
-    {
+    img: {
       src: './AdventOfMusic2024.png',
       description: 'Advent of Music 2024'
     }
-  ),
-  new TimelineItem(
-    'Played bass for recording of EP "Poderozo Nombre" by Zamar Adoración.',
-    `<p>
+  },
+  {
+    title:
+      'Played bass for recording of EP "Poderozo Nombre" by Zamar Adoración.',
+    description: `<p>
       Played the bass for the four songs of the EP. <br />
       The Recording was done in collaboration with Latin Grammy nominated Producers Eduardo Bladinieres and Gil Elguezabal.<br />
       Two of the songs have been nominated for the 2025 Catholic Music Awards.
     </p>`,
-    {
+    date: {
       end: { day: 14, month: 8, year: 2023 }
     },
-    'music',
-    {
+    img: {
       src: './poderosoNombre.png',
       description: 'Poderoso Nombre EP'
     }
-  ),
+  },
   // new TimelineItem(
   //   'Played Bass for recording of Album "Juniper" by indie band Juniper.',
   //   `<p>
@@ -111,25 +110,24 @@ export const musicTimelineItems: TimelineItem = [
   //   },
   //   'music'
   // ),
-  new TimelineItem(
-    'Bassist at Zamar Adoración',
-    `<p>
+  {
+    title: 'Bassist at Zamar Adoración',
+    description: `<p>
       Played the bass for the Worship group Zamar Adoración.<br />
       Collaborated in the composition and recording of songs.
     </p>`,
-    {
+    date: {
       start: { day: 23, month: 5, year: 2021 },
       end: { day: 31, month: 8, year: 2023 }
     },
-    'music',
-    {
+    img: {
       src: './poderosoNombre.png',
       description: 'Zamar Adoración'
     }
-  ),
-  new TimelineItem(
-    "Ryan Leach's composing competition July 2023",
-    `<p>
+  },
+  {
+    title: "Ryan Leach's composing competition July 2023",
+    description: `<p>
       Submitted a piece for participating on the competition.
     </p>
     <div class="w-full">
@@ -144,17 +142,16 @@ export const musicTimelineItems: TimelineItem = [
       </iframe>
     </div>
     `,
-    {
+    date: {
       end: { day: 15, month: 6, year: 2023 }
     },
-    'music',
-    {
+    img: {
       src: './rlcc062023.png'
     }
-  ),
-  new TimelineItem(
-    "Ryan Leach's composing competition January 2023",
-    `<p>
+  },
+  {
+    title: "Ryan Leach's composing competition January 2023",
+    description: `<p>
       Submitted a piece for participating on the competition.
     </p>
     <div class="w-full">
@@ -169,12 +166,15 @@ export const musicTimelineItems: TimelineItem = [
       </iframe>
     </div>
     `,
-    {
+    date: {
       end: { day: 15, month: 1, year: 2023 }
     },
-    'music',
-    {
+    img: {
       src: './rlcc012023.png'
     }
-  )
+  }
+]
+
+export const musicTimelineItems: TimelineItem = [
+  ...items.map((item) => ({ ...item, category: 'music' }))
 ]

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TimelineItem } from '@/types/timeline'
+import { TimelineItem, getDateString } from '@/types/timeline'
 
 withDefaults(
   defineProps<{
@@ -32,7 +32,7 @@ const emit = defineEmits<{
 
     <div class="flex flex-col text-wrap items-start text-left grow">
       <span class="font-bold">{{ item.title }}</span>
-      <span class="text-xs">{{ item.getDateString() }}</span>
+      <span class="text-xs">{{ getDateString(item) }}</span>
       <span v-html="item.description" />
     </div>
     <div class="shrink-0">
@@ -73,7 +73,7 @@ const emit = defineEmits<{
     </div>
     <div class="flex flex-col text-wrap items-start text-left grow">
       <span class="font-semibold">{{ item.title }}</span>
-      <span class="text-xs">{{ item.getDateString() }}</span>
+      <span class="text-xs">{{ getDateString(item) }}</span>
     </div>
   </div>
 </template>

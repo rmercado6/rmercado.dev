@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { TimelineItem } from '@/types/timeline'
+import { TimelineItem, getStartDate, getEndDate } from '@/types/timeline'
 import TimelineItemComponent from '@/components/v2/TimelineItemComponent.vue'
 import { timelineItems } from './data/timelineData'
 
@@ -36,16 +36,16 @@ function getFilteredTimelineItemsByYear(year: number) {
   return filteredItems.sort((a, b) => {
     const aDate =
       a.category === 'studies'
-        ? a.getEndDate()
+        ? getEndDate(a)
         : a.date.start
-        ? a.getStartDate()
-        : a.getEndDate()
+        ? getStartDate(a)
+        : getEndDate(a)
     const bDate =
       b.category === 'studies'
-        ? b.getEndDate()
+        ? getEndDate(b)
         : b.date.start
-        ? b.getStartDate()
-        : b.getEndDate()
+        ? getStartDate(b)
+        : getEndDate(b)
     return bDate - aDate
   })
 }

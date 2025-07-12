@@ -4,7 +4,7 @@ import { professionalTimelineItems } from './professional'
 import { musicTimelineItems } from './music'
 
 export const timelineItems: TimelineItem[] = [
-  ...educationTimelineItems
-  // ...professionalTimelineItems,
-  // ...musicTimelineItems
+  ...professionalTimelineItems,
+  ...educationTimelineItems,
+  ...musicTimelineItems
 ]
