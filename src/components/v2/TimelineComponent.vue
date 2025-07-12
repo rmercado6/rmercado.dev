@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { timelineItems, TimelineItem } from '@/types/timeline'
+import { TimelineItem } from '@/types/timeline'
 import TimelineItemComponent from '@/components/v2/TimelineItemComponent.vue'
+import { timelineItems } from './data/timelineData'
 
 const selectedCategory = ref('all')
 const selectedItem = ref<TimelineItem | null>(null)
@@ -24,16 +25,35 @@ const selectedTimeSpan = computed(() => {
 })
 
 function getFilteredTimelineItemsByYear(year: number) {
-  return filteredTimelineItems.value.filter((item: TimelineItem) => {
-    if (item.category === 'studies') return item.date.end.year === year
-    return item.date.start.year === year
+  const filteredItems = filteredTimelineItems.value.filter(
+    (item: TimelineItem) => {
+      if (item.category === 'studies') return item.date.end.year === year
+      return item.date.start
+        ? item.date.start.year === year
+        : item.date.end.year === year
+    }
+  )
+  return filteredItems.sort((a, b) => {
+    const aDate =
+      a.category === 'studies'
+        ? a.getEndDate()
+        : a.date.start
+        ? a.getStartDate()
+        : a.getEndDate()
+    const bDate =
+      b.category === 'studies'
+        ? b.getEndDate()
+        : b.date.start
+        ? b.getStartDate()
+        : b.getEndDate()
+    return bDate - aDate
   })
 }
 
 function getYears() {
   const eventYears = new Set<number>()
   for (const item of filteredTimelineItems.value) {
-    eventYears.add(item.date.start.year)
+    eventYears.add(item.date.start ? item.date.start.year : item.date.end.year)
   }
   const startYear = Array.from(eventYears).sort((a, b) => a - b)[0]
   const currentYear = new Date().getFullYear()
@@ -55,9 +75,11 @@ const categories = [
 
 <template>
   <div
-    class="flex flex-col items-center justify-start min-h-screen my-10 md:my-0"
+    class="flex flex-col items-center justify-start max-h-screen h-screen overflow-y-auto overflow-x-hidden my-0 py-6 w-full"
   >
-    <div class="flex justify-center gap-4 pb-6">
+    <div
+      class="flex justify-center gap-4 py-3 px-4 sticky top-0 dark:bg-black bg-white z-10 border border-gray-200 dark:border-gray-500 max-w-full text-xs md:text-md"
+    >
       <template v-for="category in categories" :key="category.key">
         <a
           class="flex items-center justify-center text-center"
@@ -72,7 +94,9 @@ const categories = [
         </a>
       </template>
     </div>
-    <div class="flex flex-col items-center timeline w-screen px-6">
+    <div
+      class="flex flex-col items-center timeline max-w-full w-screen md:px-6"
+    >
       <span
         class="flex rounded-full p-2 w-fit aspect-square justify-center items-center text-xs timelineItem"
       >

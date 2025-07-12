@@ -18,7 +18,7 @@ const emit = defineEmits<{
 
 <template>
   <div
-    class="flex p-2 border timelineItem gap-3 w-full md:w-1/2 lg:w-1/3 select-none border-emerald-500/80 bg-gray-700/10"
+    class="flex p-2 border timelineItem gap-3 w-full max-w-full select-none border-emerald-500/80 bg-gray-700/10"
     v-if="open"
   >
     <div v-if="item.img" class="shrink-0">
@@ -60,7 +60,7 @@ const emit = defineEmits<{
   </div>
   <div
     v-else
-    class="flex p-2 border timelineItem gap-3 w-full md:w-1/2 lg:w-1/3 select-none border-gray-400 hover:border-emerald-500/70 cursor-pointer"
+    class="flex p-2 border timelineItem gap-3 w-full select-none border-gray-400 hover:border-emerald-500/70 cursor-pointer"
     @click="emit('selected', item)"
   >
     <div v-if="item.img" class="shrink-0">
