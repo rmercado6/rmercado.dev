@@ -10,6 +10,7 @@ const items = [
     <br />
     Coursed as Cello Instrumentalist
     `,
+    tags: ['Music', 'Cello', 'Harmony', 'Counterpoint'],
     date: {
       start: { day: 6, month: 8, year: 2016 },
       end: { day: 1, month: 1, year: 2019 }
@@ -45,6 +46,15 @@ const items = [
       <img src="./ExperimentUI-ss2.jpeg" alt="well-doc" />
     </div>
     `,
+    tags: [
+      'LLMs',
+      'ChatGPT 4o',
+      'FastAPI',
+      'Python',
+      'Vue3',
+      'Data Collection/Crawling',
+      'NLP'
+    ],
     date: {
       start: { day: 11, month: 9, year: 2023 },
       end: { day: 21, month: 11, year: 2024 }
@@ -69,6 +79,13 @@ const items = [
       </a>
     </i>
     `,
+    tags: [
+      'Laravel',
+      'Data Collection (Surveys)',
+      'Apriori',
+      'Data Visualization',
+      'Data Analysis'
+    ],
     date: {
       start: { day: 1, month: 8, year: 2015 },
       end: { day: 31, month: 5, year: 2020 }
@@ -90,6 +107,7 @@ const items = [
     <br />
     <i>Awarded with excellence</i>
     `,
+    tags: ['Cinema'],
     date: {
       start: { day: 1, month: 8, year: 2013 },
       end: { day: 30, month: 6, year: 2015 }

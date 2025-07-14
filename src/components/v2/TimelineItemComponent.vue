@@ -34,6 +34,15 @@ const emit = defineEmits<{
       <span class="font-bold">{{ item.title }}</span>
       <span class="text-xs">{{ getDateString(item) }}</span>
       <span v-html="item.description" />
+      <div v-if="item.tags" class="mt-3 p-2 flex flex-wrap gap-1.5 text-xs">
+        <template v-for="tag in item.tags" :key="tag">
+          <span
+            class="p-1 border border-emerald-500/50 rounded-lg items-center flex"
+          >
+            {{ tag }}
+          </span>
+        </template>
+      </div>
     </div>
     <div class="shrink-0">
       <div

@@ -17,6 +17,7 @@ const items: TimelineItem = [
       </iframe>
     </div>
     `,
+    tags: ['Original Composition', 'Orchestra', 'Live Recording', 'Music'],
     date: {
       start: null,
       end: { day: 4, month: 4, year: 2024 }
@@ -42,6 +43,7 @@ const items: TimelineItem = [
       </iframe>
     </div>
     `,
+    tags: ['Original Composition', 'Orchestra', 'Live Recording', 'Music'],
     date: {
       start: null,
       end: { day: 3, month: 4, year: 2025 }
@@ -75,6 +77,15 @@ const items: TimelineItem = [
       </iframe>
     </div>
     `,
+    tags: [
+      'PHP',
+      'Laravel',
+      'Vue3',
+      'Postgres',
+      'Advent Challenge',
+      'Music',
+      'Original Composition'
+    ],
     date: {
       start: { day: 1, month: 12, year: 2024 },
       end: { day: 24, month: 12, year: 2024 }
@@ -104,7 +115,8 @@ const items: TimelineItem = [
       class="my-2" 
       loading="lazy"
     >
-</iframe>`,
+    </iframe>`,
+    tags: ['Bass', 'Recording', 'Religious', 'Music', 'Original Composition'],
     date: {
       end: { day: 14, month: 8, year: 2023 }
     },
@@ -129,6 +141,14 @@ const items: TimelineItem = [
       Played the bass for the Worship group Zamar Adoración.<br />
       Collaborated in the composition and recording of songs.
     </p>`,
+    tags: [
+      'Bass',
+      'Live Playing',
+      'Recording',
+      'Religious',
+      'Music',
+      'Original Composition'
+    ],
     date: {
       start: { day: 23, month: 5, year: 2021 },
       end: { day: 31, month: 8, year: 2023 }
@@ -155,6 +175,13 @@ const items: TimelineItem = [
       </iframe>
     </div>
     `,
+    tags: [
+      'Orchestra',
+      'VST Orchestra',
+      'Music',
+      'Original Composition',
+      'Competition'
+    ],
     date: {
       end: { day: 15, month: 6, year: 2023 }
     },
@@ -179,6 +206,13 @@ const items: TimelineItem = [
       </iframe>
     </div>
     `,
+    tags: [
+      'Orchestra',
+      'VST Orchestra',
+      'Music',
+      'Original Composition',
+      'Competition'
+    ],
     date: {
       end: { day: 15, month: 1, year: 2023 }
     },
