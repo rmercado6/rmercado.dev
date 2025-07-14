@@ -91,7 +91,20 @@ const items: TimelineItem = [
       Played the bass for the four songs of the EP. <br />
       The Recording was done in collaboration with Latin Grammy nominated Producers Eduardo Bladinieres and Gil Elguezabal.<br />
       Two of the songs have been nominated for the 2025 Catholic Music Awards.
-    </p>`,
+    </p>
+    <iframe 
+      data-testid="embed-iframe"
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/album/4Fq8bBl9clL8p2imAOHn3n?utm_source=generator"
+      width="100%"
+      height="152"
+      frameBorder="0"
+      allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      class="my-2" 
+      loading="lazy"
+    >
+</iframe>`,
     date: {
       end: { day: 14, month: 8, year: 2023 }
     },

@@ -2,13 +2,13 @@ import { TimelineItem } from '../../../types/timeline'
 
 const items = [
   {
-    title: 'Medium Level Technical Career in Music',
+    title: 'Medium Level Technical Career in Music (cello)',
     description: `
     Universidad Autónoma de Nuevo León
     -
     Facultad de Música
     <br />
-    Coursed as Instrumentalist in Cello
+    Coursed as Cello Instrumentalist
     `,
     date: {
       start: { day: 6, month: 8, year: 2016 },
@@ -27,7 +27,23 @@ const items = [
     School of informatics
     <br />
     Dissertation: 
-    <i>Automated Financial Document Summarization using GPT</i>
+    <i class="underline">Automated Financial Document Summarization using GPT</i>
+    <br />
+    <ul class="list-disc text-justify ml-3">
+      <li>Crawled a database of financial documents of UK firms.</li>
+      <li>
+        Built a python module for querying a large document to a short context
+        windowed model.
+      </li>
+      <li>
+        Developed a user interface for querying the models about the collected documents
+        and study their responses and the intermediate steps. 
+      </li>
+    </ul>
+    <div class="flex flex-col gap-2">
+      <img src="./ExperimentUI-ss1.jpeg" alt="well-doc" />
+      <img src="./ExperimentUI-ss2.jpeg" alt="well-doc" />
+    </div>
     `,
     date: {
       start: { day: 11, month: 9, year: 2023 },

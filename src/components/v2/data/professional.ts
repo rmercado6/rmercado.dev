@@ -2,6 +2,19 @@ import { TimelineItem } from '../../../types/timeline'
 
 const items = [
   {
+    title: 'Web developer intern at CITI',
+    description: ``,
+    date: {
+      start: { day: 6, month: 8, year: 2018 },
+      end: { day: 6, month: 8, year: 2019 }
+    },
+    img: {
+      src: './citi.webp',
+      description: 'CITI Logo',
+      class: 'bg-white'
+    }
+  },
+  {
     title: 'Software Developer Level 2',
     description: 'Podfather',
     date: {
