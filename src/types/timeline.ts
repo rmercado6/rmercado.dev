@@ -15,6 +15,7 @@ type Image = {
 export type TimelineItem = {
   title: string
   description: string
+  tags: string[]
   date: {
     start?: DateDetails
     end?: DateDetails

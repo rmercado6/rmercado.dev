@@ -29,7 +29,7 @@ const items = [
     Dissertation: 
     <i class="underline">Automated Financial Document Summarization using GPT</i>
     <br />
-    <ul class="list-disc text-justify ml-3">
+    <ul class="list-disc text-justify ml-4">
       <li>Crawled a database of financial documents of UK firms.</li>
       <li>
         Built a python module for querying a large document to a short context
