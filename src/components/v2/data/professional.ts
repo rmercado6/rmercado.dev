@@ -8,7 +8,7 @@ const items = [
     <p>Podfather; Edinburgh, Scotland.</p>
     <br />
     <p class="font-semibold">Highlights:</p>
-    <ul class="list-disc text-justify ml-4">
+    <ul class="list-disc ml-4">
       <li>
         Collaborated to migrate Vue2 SPA to Vue3 while spotting and fixing
         visual and functional bugs.
@@ -43,7 +43,7 @@ const items = [
     <p>Corporación en Investigación Tecnológica e Informática (CITI); Nuevo León, México.</p>
     <br />
     <p class="font-semibold">Highlights:</p>
-    <ul class="list-disc text-justify ml-4">
+    <ul class="list-disc ml-4">
       <li>
         Developed automated test cases for an online banking mobile application.
       </li>
@@ -83,7 +83,7 @@ const items = [
     <p>Accenture México; Nuevo León, México.</p>
     <br />
     <p class="font-semibold">Highlights:</p>
-    <ul class="list-disc text-justify ml-4">
+    <ul class="list-disc ml-4">
       <li>
         Analysed, designed, and developed a single robust Python script to interconnect multiple
         systems to a central system for a financial retirement company in the US. The script was
@@ -128,7 +128,7 @@ const items = [
     <p>Axtel; Nuevo León, México.</p>
     <br />
     <p class="font-semibold">Highlights:</p>
-    <ul class="list-disc text-justify ml-4">
+    <ul class="list-disc ml-4">
       <li>
         Analysed, designed, developed, and implemented Python scripts to collect data from network
         hardware and generate automated PowerBI reports which replaced manual ones, enabling
@@ -172,7 +172,7 @@ const items = [
     <p>Corporación en Investigación Tecnológica e Informática (CITI); Nuevo León, México.</p>
     <br />
     <p class="font-semibold">Highlights:</p>
-    <ul class="list-disc text-justify ml-4">
+    <ul class="list-disc ml-4">
       <li>
         Developed a package using Java’s reflection API that contained annotations and classes
         facilitating seamless integration between the new transactional product and the clients’
