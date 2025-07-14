@@ -1,18 +1,40 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { TimelineItem, getStartDate, getEndDate } from '@/types/timeline'
 import TimelineItemComponent from '@/components/v2/TimelineItemComponent.vue'
 import { timelineItems } from './data/timelineData'
 
 const selectedCategory = ref('all')
 const selectedItem = ref<TimelineItem | null>(null)
+const showTags = ref(false)
 
 const filteredTimelineItems = computed(() => {
-  if (selectedCategory.value === 'all') {
-    return timelineItems
-  }
+  const nSelectedTags = selectedTags.value.size
+  const categoryAll = selectedCategory.value === 'all'
+
+  if (categoryAll && nSelectedTags === 0) return timelineItems
+
+  return timelineItems.filter((item) => {
+    const isInCategory = !categoryAll
+      ? item.category === selectedCategory.value
+      : true
+
+    if (!item.tags && nSelectedTags > 0) return false
+    if (!item.tags || nSelectedTags === 0) return isInCategory
+
+    let hasTag = false
+    item.tags.forEach((tag) => {
+      if (selectedTags.value.has(tag)) hasTag = true
+    })
+    return isInCategory && hasTag
+  })
+})
+
+const filteredTimelineItemsByCategory = computed(() => {
+  if (selectedCategory.value === 'all') return timelineItems
+
   return timelineItems.filter(
-    (item: TimelineItem) => item.category === selectedCategory.value
+    (item) => item.category === selectedCategory.value
   )
 })
 
@@ -23,6 +45,17 @@ const selectedTimeSpan = computed(() => {
     to: selectedItem.value.date.end.year
   }
 })
+
+const tags = computed(() => {
+  const tags = new Set<string>([])
+
+  filteredTimelineItemsByCategory.value.forEach((item) => {
+    if (item.tags) tags.add(...item.tags)
+  })
+  return tags
+})
+
+const selectedTags = ref<Set<string>>(new Set([]))
 
 function getFilteredTimelineItemsByYear(year: number) {
   const filteredItems = filteredTimelineItems.value.filter(
@@ -64,6 +97,16 @@ function getYears() {
   return years
 }
 
+watch(tags, () => {
+  selectedTags.value.forEach((tag) => {
+    if (!tags.value.has(tag)) selectedTags.value.delete(tag)
+  })
+})
+
+watch(showTags, () => {
+  selectedTags.value.clear()
+})
+
 const categories = [
   { name: 'All', key: 'all' },
   { name: 'Studies', key: 'studies' },
@@ -78,21 +121,68 @@ const categories = [
     class="flex flex-col items-center justify-start max-h-screen h-screen overflow-y-auto overflow-x-hidden my-0 py-6 w-full"
   >
     <div
-      class="flex justify-center gap-4 py-3 px-4 sticky top-0 dark:bg-black bg-white z-10 border border-gray-200 dark:border-gray-500 max-w-full text-xs md:text-md"
+      class="py-3 px-4 sticky top-0 dark:bg-black bg-white z-10 border border-gray-200 dark:border-gray-500 max-w-full text-xs md:text-md"
     >
-      <template v-for="category in categories" :key="category.key">
-        <a
-          class="flex items-center justify-center text-center"
-          @click="selectedCategory = category.key"
-          @mouseenter="selectedCategory = category.key"
-          :class="{
-            'underline font-bold px-2 bg-gray-400/20':
-              selectedCategory === category.key
-          }"
+      <div class="w-full flex justify-center gap-4">
+        <template v-for="category in categories" :key="category.key">
+          <a
+            class="flex items-center justify-center text-center"
+            @click="selectedCategory = category.key"
+            @mouseenter="selectedCategory = category.key"
+            :class="{
+              'underline font-bold px-2 bg-gray-400/20':
+                selectedCategory === category.key
+            }"
+          >
+            {{ category.name }}
+          </a>
+        </template>
+        <div
+          class="flex items-center justify-center text-center cursor-pointer"
+          @click="showTags = !showTags"
         >
-          {{ category.name }}
-        </a>
-      </template>
+          <span class="hover:border rounded-full p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-tag-icon lucide-tag w-3 h-3"
+            >
+              <path
+                d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"
+              />
+              <circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        v-if="showTags"
+        class="w-full flex flex-wrap gap-1 items-center mt-2"
+      >
+        <template v-for="tag in tags" :key="tag">
+          <template v-if="!selectedTags.has(tag)">
+            <a
+              class="px-1 border border-gray-200 dark:border-gray-500 rounded-lg flex items-center justify-center"
+              @click="selectedTags.add(tag)"
+            >
+              {{ tag }}
+            </a>
+          </template>
+          <template v-else>
+            <a
+              class="px-1 border border-gray-200 dark:border-gray-500 rounded-lg flex items-center justify-center bg-emerald-500/40"
+              @click="selectedTags.delete(tag)"
+            >
+              {{ tag }}
+            </a>
+          </template>
+        </template>
+      </div>
     </div>
     <div
       class="flex flex-col items-center timeline max-w-full w-screen md:px-6"
