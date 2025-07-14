@@ -80,7 +80,7 @@ const items: TimelineItem = [
     tags: [
       'PHP',
       'Laravel',
-      'Vue3',
+      'VueJS',
       'Postgres',
       'Advent Challenge',
       'Music',

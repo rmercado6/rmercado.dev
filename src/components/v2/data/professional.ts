@@ -57,7 +57,7 @@ const items = [
     `,
     tags: [
       'Java',
-      'JavaScript',
+      'JS',
       'Spring framework',
       'jQuery',
       'bootstrap',
@@ -151,7 +151,7 @@ const items = [
     tags: [
       'Python',
       'Flask',
-      'Vue.js',
+      'VueJS',
       'Microsoft PowerBI',
       'MySQL',
       'Jenkins',
@@ -182,7 +182,7 @@ const items = [
         Designed and developed a real-time chat in a .NET framework web application for a Mexican
         government department. Worked closely with the security department to design an alternate
         solution for web sockets since they were blocked by a security policy. Decided to use
-        JavaScript web workers as a solution.
+        JS web workers as a solution.
       </li>
       <li>
         Developed features on the front-end and back-end of a transaction website for a Mexican
@@ -198,7 +198,7 @@ const items = [
     tags: [
       'Java',
       'C#',
-      'JavaScript',
+      'JS',
       'Spring framework',
       '.NET framework',
       'jQuery',

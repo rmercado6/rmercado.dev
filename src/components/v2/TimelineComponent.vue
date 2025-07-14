@@ -50,9 +50,14 @@ const tags = computed(() => {
   const tags = new Set<string>([])
 
   filteredTimelineItemsByCategory.value.forEach((item) => {
-    if (item.tags) tags.add(...item.tags)
+    if (item.tags) item.tags.forEach((tag) => tags.add(tag))
   })
-  return tags
+
+  return Array.from(tags).sort((a, b) => {
+    const A = a.toUpperCase()
+    const B = b.toUpperCase()
+    return A < B ? -1 : A > B ? 1 : 0
+  })
 })
 
 const selectedTags = ref<Set<string>>(new Set([]))
@@ -123,7 +128,7 @@ const categories = [
     <div
       class="py-3 px-4 sticky top-0 dark:bg-black bg-white z-10 border border-gray-200 dark:border-gray-500 max-w-full text-xs md:text-md"
     >
-      <div class="w-full flex justify-center gap-4">
+      <div class="w-full flex justify-center gap-2 flex-wrap">
         <template v-for="category in categories" :key="category.key">
           <a
             class="flex items-center justify-center text-center"
@@ -141,7 +146,7 @@ const categories = [
           class="flex items-center justify-center text-center cursor-pointer"
           @click="showTags = !showTags"
         >
-          <span class="hover:border rounded-full p-1">
+          <span class="p-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

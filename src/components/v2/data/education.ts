@@ -51,7 +51,7 @@ const items = [
       'ChatGPT 4o',
       'FastAPI',
       'Python',
-      'Vue3',
+      'VueJS',
       'Data Collection/Crawling',
       'NLP'
     ],

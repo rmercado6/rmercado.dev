@@ -17,7 +17,7 @@ const items: TimelineItem[] = [
           target="_blank"
         >here</a>.
       </p>`,
-    tags: ['PHP', 'JavaScript', 'Laravel', 'Postgres', 'AlpineJS', 'Livewire'],
+    tags: ['PHP', 'JS', 'Laravel', 'Postgres', 'AlpineJS', 'Livewire'],
     date: {
       start: { day: 1, month: 12, year: 2021 },
       end: { day: 31, month: 1, year: 2022 }
@@ -60,7 +60,7 @@ const items: TimelineItem[] = [
       </div> 
     </p>
     `,
-    tags: ['PHP', 'JavaScript', 'Laravel', 'Postgres', 'Livewire'],
+    tags: ['PHP', 'JS', 'Laravel', 'Postgres', 'Livewire'],
     date: {
       start: { day: 1, month: 9, year: 2018 },
       end: { day: 1, month: 8, year: 2020 }
@@ -118,7 +118,7 @@ const items: TimelineItem[] = [
       offer education programmes that appeal to them. 
     </p>
     `,
-    tags: ['C#', '.NET Framework', 'Javascript', 'JQuery'],
+    tags: ['C#', '.NET Framework', 'JS', 'JQuery'],
     date: {
       start: { day: 1, month: 8, year: 2019 },
       end: { day: 31, month: 10, year: 2019 }
@@ -131,7 +131,7 @@ const items: TimelineItem[] = [
       Specialized Restaurant management system.
     </p>
     `,
-    tags: ['C#', '.NET Framework', 'Javascript', 'JQuery'],
+    tags: ['C#', '.NET Framework', 'JS', 'JQuery'],
     date: {
       start: { day: 1, month: 1, year: 2019 },
       end: { day: 31, month: 3, year: 2020 }
