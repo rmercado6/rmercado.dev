@@ -8,15 +8,17 @@
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">
           Ricardo Mercado Cavazos
         </h1>
+        <p class="xl:text-lg leading-relaxed mb-8 md:mb-12 text-justify">
+          MSc. Advanced Technologies for Financial Computing at The University
+          of Edinburgh.
+        </p>
 
         <p class="xl:text-lg leading-relaxed mb-8 md:mb-12 text-justify">
-          Dedicated software developer pursuing MSc in Advanced Technologies for
-          Financial Computing at the University of Edinburgh. Combining 4+ years
-          of professional experience, adept at devising innovative software
-          solutions, tailored to client requirements. Experienced in
-          understanding client demands, identifying and addressing priorities to
-          deliver cutting-edge improvements. Passionate musician and orchestral
-          composer.
+          Dedicated software developer combining 4+ years of professional
+          experience, adept at devising innovative software solutions, tailored
+          to client requirements. Experienced in understanding client demands,
+          identifying and addressing priorities to deliver cutting-edge
+          improvements. Passionate musician and orchestral composer.
         </p>
       </div>
       <!-- content - end -->
