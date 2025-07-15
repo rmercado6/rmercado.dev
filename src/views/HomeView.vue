@@ -4,7 +4,7 @@ import TimelineComponent from '@/components/v2/TimelineComponent.vue'
 </script>
 
 <template>
-  <main class="md:px-10 md:grid md:grid-cols-2 gap-6">
+  <main class="md:grid md:grid-cols-2 gap-6">
     <TheWelcome />
     <TimelineComponent />
   </main>

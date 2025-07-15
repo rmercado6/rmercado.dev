@@ -123,7 +123,7 @@ const categories = [
 
 <template>
   <div
-    class="flex flex-col items-center justify-start max-h-screen h-screen overflow-y-auto overflow-x-hidden my-0 py-6 w-full"
+    class="flex flex-col items-center justify-start h-screen overflow-y-auto overflow-x-hidden my-0 py-6 w-full md:px-4 px-6"
   >
     <div
       class="py-3 px-4 sticky top-0 dark:bg-black bg-white z-10 border border-gray-200 dark:border-gray-500 max-w-full text-xs md:text-md"
@@ -190,7 +190,7 @@ const categories = [
       </div>
     </div>
     <div
-      class="flex flex-col items-center timeline max-w-full w-screen md:px-6"
+      class="flex flex-col items-center timeline w-screen md:px-6 px-4 max-w-2xl"
     >
       <span
         class="flex rounded-full p-2 w-fit aspect-square justify-center items-center text-xs timelineItem"
