@@ -1,6 +1,6 @@
 import { TimelineItem } from '../../../types/timeline'
 
-const items: TimelineItem = [
+const items: Omit<TimelineItem, 'category'>[] = [
   {
     title:
       '"Somnia - 7. Epitomé" was interpreted by Edinburgh University\'s Composers\' Orchestra',
@@ -222,6 +222,6 @@ const items: TimelineItem = [
   }
 ]
 
-export const musicTimelineItems: TimelineItem = [
-  ...items.map((item) => ({ ...item, category: 'music' }))
+export const musicTimelineItems: TimelineItem[] = [
+  ...items.map((item) => ({ ...item, category: 'music' } as TimelineItem))
 ]

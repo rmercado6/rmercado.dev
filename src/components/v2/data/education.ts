@@ -1,6 +1,6 @@
 import { TimelineItem } from '../../../types/timeline'
 
-const items = [
+const items: Omit<TimelineItem, 'category'>[] = [
   {
     title: 'Medium Level Technical Career in Music (cello)',
     description: `
@@ -120,5 +120,5 @@ const items = [
 ]
 
 export const educationTimelineItems: TimelineItem[] = [
-  ...items.map((item) => ({ ...item, category: 'studies' }))
+  ...items.map((item) => ({ ...item, category: 'studies' } as TimelineItem))
 ]

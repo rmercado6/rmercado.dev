@@ -1,4 +1,9 @@
-export type Category = 'studies' | 'professional' | 'personal' | 'music'
+export type Category =
+  | 'studies'
+  | 'professional'
+  | 'personal'
+  | 'music'
+  | 'spiritual'
 
 export type DateDetails = {
   day: number

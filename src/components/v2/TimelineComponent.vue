@@ -117,7 +117,8 @@ const categories = [
   { name: 'Studies', key: 'studies' },
   { name: 'Professional Experience', key: 'professional' },
   { name: 'Personal Projects', key: 'personal' },
-  { name: 'Music', key: 'music' }
+  { name: 'Music', key: 'music' },
+  { name: 'Spirituality', key: 'spiritual' }
 ]
 </script>
 
