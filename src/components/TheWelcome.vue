@@ -2,11 +2,11 @@
 
 <template>
   <div
-    class="min-h-screen flex flex-col justify-center items-center px-8 md:pl-12 flex justify-center"
+    class="h-screen flex flex-col justify-center items-center px-8 md:pl-12 flex justify-center"
   >
     <section class="flex flex-col items-center max-w-2xl">
       <!-- content - start -->
-      <div class="flex flex-col justify-center lg:py-12 xl:py-24">
+      <div class="flex flex-col justify-center lg:pt-12 xl:pt-24">
         <div class="grid grid-cols-2 gap-1">
           <div
             class="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12 flex items-center h-full text-center"
