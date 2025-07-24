@@ -190,7 +190,7 @@ const categories = [
       </div>
     </div>
     <div
-      class="flex flex-col items-center timeline w-screen md:px-6 px-4 max-w-2xl"
+      class="flex flex-col items-center timeline w-screen md:px-6 px-4 max-w-full lg:max-w-2xl"
     >
       <span
         class="flex rounded-full p-2 w-fit aspect-square justify-center items-center text-xs timelineItem"

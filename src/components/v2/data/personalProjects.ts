@@ -21,7 +21,8 @@ const items: TimelineItem[] = [
     date: {
       start: { day: 1, month: 12, year: 2021 },
       end: { day: 31, month: 1, year: 2022 }
-    }
+    },
+    category: 'personal'
   },
   {
     title: 'WellDoc',
@@ -44,7 +45,8 @@ const items: TimelineItem[] = [
       src: './welldoc.png',
       description: 'WellDoc logo',
       class: 'bg-white'
-    }
+    },
+    category: 'personal'
   },
   {
     title: 'Laboratorios de Física - Control de asistencia',
@@ -69,7 +71,8 @@ const items: TimelineItem[] = [
       src: './fime-logo-1.png',
       description: 'FIME Logo',
       class: 'bg-white'
-    }
+    },
+    category: 'personal'
   },
   {
     title: 'Tutorías',
@@ -89,7 +92,8 @@ const items: TimelineItem[] = [
       src: './fime-logo-1.png',
       description: 'FIME Logo',
       class: 'bg-white'
-    }
+    },
+    category: 'personal'
   },
   {
     title: 'Rally FIME',
@@ -103,11 +107,13 @@ const items: TimelineItem[] = [
       start: { day: 1, month: 1, year: 2019 },
       end: { day: 30, month: 11, year: 2019 }
     },
+    tags: [],
     img: {
       src: './fime-logo-1.png',
       description: 'FIME Logo',
       class: 'bg-white'
-    }
+    },
+    category: 'personal'
   },
   {
     title: 'Orientación Vocacional',
@@ -122,7 +128,8 @@ const items: TimelineItem[] = [
     date: {
       start: { day: 1, month: 8, year: 2019 },
       end: { day: 31, month: 10, year: 2019 }
-    }
+    },
+    category: 'personal'
   },
   {
     title: 'Gerente Virtual',
@@ -135,7 +142,8 @@ const items: TimelineItem[] = [
     date: {
       start: { day: 1, month: 1, year: 2019 },
       end: { day: 31, month: 3, year: 2020 }
-    }
+    },
+    category: 'personal'
   },
   {
     title: 'UHome API',
@@ -148,7 +156,8 @@ const items: TimelineItem[] = [
     date: {
       start: { day: 1, month: 9, year: 2019 },
       end: { day: 31, month: 12, year: 2019 }
-    }
+    },
+    category: 'personal'
   },
   {
     title: 'Marketing campaign video game for Caprice',
@@ -161,7 +170,34 @@ const items: TimelineItem[] = [
     date: {
       start: { day: 1, month: 11, year: 2019 },
       end: { day: 30, month: 11, year: 2019 }
-    }
+    },
+    category: 'personal'
+  },
+  {
+    title: 'music.rmercado.dev',
+    description: `
+      <div class="flex flex-col w-full grow">
+        <p>
+          Web player application for the music that I compose.<br />
+          Can take a look at it at <a href="https://music.rmercado.dev">https://music.rmercado.dev</a>.<br />
+          Here is an embedded song/piece:
+        </p>
+        <div class="w-full h-fit justify-center flex">
+          <iframe 
+            src="${import.meta.env.VITE_MUSIC_APP_URL}/player/1"
+            title="Music player"
+            referrerpolicy="strict-origin-when-cross-origin"
+            class="w-2/3"
+          >
+          </iframe>
+        </div>
+      </div>
+    `,
+    tags: [],
+    date: {
+      end: { day: 24, month: 7, year: 2025 }
+    },
+    category: 'personal'
   }
 ]
 
