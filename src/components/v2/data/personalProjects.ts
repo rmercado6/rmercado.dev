@@ -176,20 +176,21 @@ const items: TimelineItem[] = [
   {
     title: 'music.rmercado.dev',
     description: `
-      <div class="flex flex-col w-full grow">
+      <div class="flex flex-col">
         <p>
           Web player application for the music that I compose.<br />
           Can take a look at it at <a href="https://music.rmercado.dev">https://music.rmercado.dev</a>.<br />
           Here is an embedded song/piece:
         </p>
-        <div class="w-full h-fit justify-center flex">
-          <iframe 
-            src="${import.meta.env.VITE_MUSIC_APP_URL}/player/1"
-            title="Music player"
-            referrerpolicy="strict-origin-when-cross-origin"
-            class="w-2/3"
-          >
-          </iframe>
+          <div class="h-fit justify-center flex w-full">
+            <iframe 
+              src="${import.meta.env.VITE_MUSIC_APP_URL}/player/1"
+              title="Music player"
+              referrerpolicy="strict-origin-when-cross-origin"
+              class="w-full max-h-28 max-w-xs"
+            >
+            </iframe>
+          </div>
         </div>
       </div>
     `,
