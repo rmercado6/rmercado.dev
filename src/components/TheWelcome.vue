@@ -7,10 +7,23 @@
     <section class="flex flex-col items-center max-w-2xl">
       <!-- content - start -->
       <div class="flex flex-col justify-center lg:py-12 xl:py-24">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">
-          Ricardo Mercado Cavazos
-        </h1>
-        <p class="xl:text-lg leading-relaxed mb-8 md:mb-12 text-justify">
+        <div class="grid grid-cols-2 gap-1">
+          <div
+            class="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12 flex items-center h-full text-center"
+          >
+            <h1>Ricardo Mercado Cavazos</h1>
+          </div>
+          <div class="max-w-full p-6 flex items-center">
+            <img
+              src="/profile.jpg"
+              alt="profile pic"
+              class="w-full aspect-square object-cover rounded-3xl"
+            />
+          </div>
+        </div>
+        <p
+          class="xl:text-lg leading-relaxed mb-8 md:mb-12 text-justify italic opacity-70"
+        >
           MSc. Advanced Technologies for Financial Computing at The University
           of Edinburgh.
         </p>
